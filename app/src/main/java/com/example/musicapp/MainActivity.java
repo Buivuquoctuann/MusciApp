@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,8 +16,12 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     TextView noMusicTextView;
     ArrayList<AudioModel> songlist = new ArrayList<>();
+
 
     @SuppressLint("SuspiciousIndentation")
     @Override
@@ -35,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycle_view);
         noMusicTextView = findViewById(R.id.no_songs_text);
+
+
+
+
 
         if (!checkPermission()) {
             requestPermissions();
